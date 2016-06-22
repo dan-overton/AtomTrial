@@ -1,5 +1,3 @@
-var secs = document.getElementById("secs");
-
-setInterval(function() {
-  secs.innerText = Number(secs.innerText) + 1;
-}, 1000);
+requirejs(['vendor/knockout-3.4.0', 'personnelViewModel', 'vendor/domReady!'], function (ko, personnelViewModel) {
+    ko.applyBindings(new personnelViewModel());
+});

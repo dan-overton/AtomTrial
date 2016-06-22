@@ -1,4 +1,35 @@
-.seconds {
-  color: #FF00FF; }
+.personnelPanel {
+  display: flex;
+  flex-container: row; }
+
+.personnelSummary {
+  flex-basis: auto;
+  width: 20%;
+  background-color: #d7d4f5;
+  color: black; }
+
+.personnelList {
+  list-style: none;
+  margin: 0;
+  padding-left: 0; }
+  .personnelList li {
+    border-bottom: 1px solid #9da19a;
+    padding-top: 5px;
+    padding-left: 5px; }
+    .personnelList li h4 {
+      margin: 0; }
+  .personnelList li:first-child {
+    border-top: 1px solid #9da19a; }
+  .personnelList li.selectedItem {
+    background-color: red; }
+  .personnelList li:hover {
+    background-color: #8a81e2;
+    color: #333333; }
+
+.personnelDetails {
+  flex-basis: auto;
+  width: 80%;
+  background-color: #f0f0f0;
+  padding-left: 10px; }
 
 /*# sourceMappingURL=atomtrial.css.map */

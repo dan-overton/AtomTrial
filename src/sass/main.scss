@@ -1,5 +1,49 @@
 @import "variables";
 
-.seconds {
-  color: $seconds-color;
+.personnelPanel {
+  display: flex;
+  flex-container: row;
+}
+
+.personnelSummary {
+  flex-basis: auto;
+  width: 20%;
+  background-color: $listitem-color;
+  color: $listitem-text-color;
+}
+
+.personnelList {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+
+  li {
+    border-bottom: 1px solid rgb(157, 161, 154);
+    padding-top: 5px;
+    padding-left: 5px;
+
+    h4 {
+      margin: 0;
+    }
+  }
+
+  li:first-child {
+    border-top: 1px solid rgb(157, 161, 154);
+  }
+
+  li.selectedItem {
+    background-color: red;
+  }
+
+  li:hover {
+    background-color: $listitem-color-hover;
+    color: $listitem-text-color-hover
+  }
+}
+
+.personnelDetails {
+  flex-basis: auto;
+  width: 80%;
+  background-color: rgb(240, 240, 240);
+  padding-left: 10px;
 }

@@ -1,1 +1,4 @@
-$seconds-color:   #FF00FF;
+$listitem-color:   rgb(215, 212, 245);
+$listitem-color-hover: darken($listitem-color, 20%);
+$listitem-text-color: black;
+$listitem-text-color-hover: lighten($listitem-text-color, 20%);

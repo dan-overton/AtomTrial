@@ -9,6 +9,11 @@ module.exports = function(grunt) {
           {expand: true, cwd: 'src', src: ['css/*', 'sass/*'], dest: 'dist/'}
         ],
       },
+      vendorjs: {
+        files: [
+          {expand: true, cwd: 'src', src: ['scripts/vendor/*'], dest: 'dist/'}
+        ],
+      }
     },
     processhtml: {
       dist: {
@@ -29,13 +34,15 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'src/scripts/<%= pkg.name %>.js',
-        dest: 'dist/scripts/<%= pkg.name %>.min.js'
+        expand: true,
+        cwd: 'src/scripts',
+        src: '*.js',
+        dest: 'dist/scripts/'
       }
     },
     jshint: { /* syntax check the javascript files */
       // define the files to lint
-      files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+      files: ['Gruntfile.js', 'src/scripts/*.js'],
       // configure JSHint (documented at http://www.jshint.com/docs/)
       options: {
         // more options here if you want to override JSHint defaults
@@ -48,7 +55,7 @@ module.exports = function(grunt) {
     },
     watch: {
       less: {
-        files: 'src/sass/*.sass',
+        files: 'src/sass/*.scss',
         tasks: ['sass']
       }
     }
