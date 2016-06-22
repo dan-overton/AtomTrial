@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     copy: { /* Copy css files to dist directory */
       css: {
         files: [
-          {expand: true, cwd: 'src', src: ['css/*.css'], dest: 'dist/'}
+          {expand: true, cwd: 'src', src: ['css/*', 'sass/*'], dest: 'dist/'}
         ],
       },
     },
@@ -17,10 +17,10 @@ module.exports = function(grunt) {
         }
       },
     },
-    less: {
+    sass: {
       development: {
         files: {
-          'src/css/atomtrial.css': 'src/less/main.less'
+          'src/css/atomtrial.css': 'src/sass/main.scss'
         }
       }
     },
@@ -48,8 +48,8 @@ module.exports = function(grunt) {
     },
     watch: {
       less: {
-        files: 'src/less/*.less',
-        tasks: ['less']
+        files: 'src/sass/*.sass',
+        tasks: ['sass']
       }
     }
   });
@@ -58,12 +58,12 @@ module.exports = function(grunt) {
   //grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-processhtml');
-  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint', 'uglify', 'less', 'copy', 'processhtml']);
+  grunt.registerTask('default', ['jshint', 'uglify', 'sass', 'copy', 'processhtml']);
 
 };
